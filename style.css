@@ -3,26 +3,27 @@
     padding: 0; 
 }
 
+
+
 .container {
+    overflow-y: scroll;
     height: 100vh;
     margin-left: auto;
     margin-right: auto;
     width: 950px;
     display: grid;
-    grid-template: 182px 35px 1fr 80px/ 220px 1fr;
+    grid-template: 182px 35px 1fr 90px/ 220px 1fr;
     grid-template-areas: "header header"
                         "nav nav"
                         "aside content"
                         "footer footer";
-    overflow-y: scroll;
 }
 
 .header {
     grid-area: header;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-   
+    justify-content: space-between;  
 }
 
 
@@ -35,6 +36,20 @@
     margin-bottom: 13px;
 }
 
+.menuItem {
+    /* border-left: 1px solid black; */
+    font-size: 12px;
+
+}
+
+.menuItem:hover {
+    text-decoration: none;
+
+}
+
+
+
+
 
 .headerItem-2 {
     display: block;
@@ -44,24 +59,20 @@
 
 
 .slogan {
+    font-family: "Myriad Pro", sans-serif;
     font-style: italic;
-    
+      
    position: absolute;
-    margin-top: 35px;
-    margin-left:40px;
+    margin-top: 38px;
+    margin-left:120px;
 
-    font-size: 36px;
+    font-size: 30px;
     color: white;
-    padding-left: 20px;
-}
-/* Менял размер текста */
-.container p {
-    font-size: 20px;
-
+    
 }
 
 #slogan {
-    border-top: 3px solid red;
+    border-top: 3px solid #a3bed4;
 }
 
 
@@ -87,20 +98,56 @@
     color: #000;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 10px;
-   
-    
-   
-
+    padding: 9px 11px;
+    margin-right: 5px;
+    margin-left: 1px;
+    font-size: 14px;
 }
 
 
 .navItem:hover{
     color:white;
     background: linear-gradient(#bbdce9,  #236b96);
+}
 
+.navItem-content {
+    display:none;
+    position: absolute;
+    margin-top: 8px;
+    
 
 }
+
+.navDown:hover .navItem-content {
+    display: block;
+
+}
+
+
+.navItem-content a {
+    text-decoration: none;
+    display: block;
+    background: #a0cfe1;
+    color:#1d587a;
+    font-size: 11px;
+    margin-left: 1px;
+    padding: 5px;
+    font-family: Tahoma, serif;
+}
+
+.navItem-content a:hover {
+    background:#236b96;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -109,39 +156,72 @@
     background-color: #e7e7f0;
 }
 
+ul {
+    margin-top: 10px;
+}
+
 li {
+    background: url(./img/marker1.png) no-repeat left;
     list-style-type: none;
-    margin-left: 50px;
+    margin-left: 1px;
+    padding-left: 39px;
+    font-size: 12px;
+    margin-top: 4px;
     
 }
 
-li::before{
-    content: url(/img/marker1.jpg sizes="16x16");
-
+li:hover{
+    background: url(./img/marker2.png) no-repeat left;
 }
+
 
 .asideName {
     background-color: #7472b3;
     color: #fff;
-    padding-left: 15px;
+    padding: 4px 20px 5px 22px;
+    font-size: 18px;
     
 }
 
-
-
 .asideItem {
-    display: block;
     color: #000;
 }
 
 
-
 .content {
-    background: pink;
+    /* background: pink; */
     grid-area: content;
-    margin-left: 25px;
+    margin-left: 30px;
+    margin-top: 8px;
+    
 
 }
+.way {
+    
+}
+
+.way::after {
+    content: ">";
+
+}
+
+.wayItem{
+    color: #22597a;
+    font-size: 11px;
+    font-family: "Myriad Pro", sans-serif;
+
+}
+
+
+.wayItem:hover {
+    text-decoration: none;
+
+
+}
+
+
+
+
 
 
 
@@ -152,34 +232,39 @@ li::before{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .footer {
     grid-area: footer;
     background-color: #7472b3;
+    
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;   */
+
 
 }
 
+.contacts {
+    margin: 20px;
+    color:white;
+    font-size: 14px;
+    background: url(./img/logo.png) no-repeat right;
+    background-size: 15%;
+    
+
+}
 
 
 
 /* Светло сиреневый #e7e7f0
     Сиреневый       #7472b3
 
-    выпадающий список #a0cfe1
+    выпадающий список 
     градиент начало #236b96
     конец #bbdce9
 
+    color way #22597a
+    about #326697
+    name profile  #6571ad
 
 */
 
@@ -187,6 +272,7 @@ li::before{
 
 
 a, p {
-    font-family:Arial Narrow, sans-serif;
+    font-family: Arial Narrow, sans-serif;
 
 }
+
