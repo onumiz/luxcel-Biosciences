@@ -3,16 +3,14 @@
     padding: 0; 
 }
 
-
-
 .container {
-    overflow-y: scroll;
     height: 100vh;
     margin-left: auto;
     margin-right: auto;
-    width: 950px;
+    max-width: 950px;
+    min-width: 300px;
     display: grid;
-    grid-template: 182px 35px 1fr 90px/ 220px 1fr;
+    grid-template: 182px 35px 1fr 80px/ 220px 1fr;
     grid-template-areas: "header header"
                         "nav nav"
                         "aside content"
@@ -26,72 +24,67 @@
     justify-content: space-between;  
 }
 
-
 .headerItem-1 {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 24px;
-    margin-left: 25px;
-    margin-bottom: 13px;
 }
 
-.menuItem {
-    /* border-left: 1px solid black; */
-    font-size: 12px;
-
+.headerItem-1 img {
+    height: 37px;
+    width: 150px;
+    margin: 24px 0 13px 25px;
 }
 
-.menuItem:hover {
+.menu {
+    display: flex;
+    font-size: 11px;
+    margin-top: 34px;
+}
+
+.menu div::after {
+    content: '|';
+    font-weight: bold;
+    margin: 0 7px;
+}
+
+.menu div:last-child::after {
+    content: ' ';
+    margin: 0px;
+}
+
+.menu a {
+    color: #1f4f6d;
+}
+
+.menu a:hover, .way a:hover, .smallNav a:hover {
     text-decoration: none;
-
 }
-
-
-
-
 
 .headerItem-2 {
-    display: block;
-    background-image: src 
+    border-top: 3px solid #a3bed4;
+    display: block; 
 }
 
-
+.headerItem-2 img {
+    height: 100%;
+    width: 100%;
+}
 
 .slogan {
     font-family: "Myriad Pro", sans-serif;
-    font-style: italic;
-      
-   position: absolute;
-    margin-top: 38px;
-    margin-left:120px;
-
+    font-style: italic;  
+    position: absolute;
+    margin: 35px 120px;
     font-size: 30px;
-    color: white;
-    
+    color: white;  
 }
-
-#slogan {
-    border-top: 3px solid #a3bed4;
-}
-
-
-
-
-
-
-
-
-
 
 .nav {
     grid-area: nav;
-    background: linear-gradient(#eff0f8,  #9496ca);
+    background: linear-gradient(#eff0f8,  #a3a4ce);
     padding-left: 220px;
     display: flex;
-    align-items: center;
-    
-
+    align-items: center;   
 }
 
 .navItem {
@@ -104,27 +97,22 @@
     font-size: 14px;
 }
 
-
 .navItem:hover{
     color:white;
     background: linear-gradient(#bbdce9,  #236b96);
 }
 
-.navItem-content {
+.navDown-content {
     display:none;
     position: absolute;
     margin-top: 8px;
-    
-
 }
 
-.navDown:hover .navItem-content {
+.navDown:hover .navDown-content {
     display: block;
-
 }
 
-
-.navItem-content a {
+.navDown-content a {
     text-decoration: none;
     display: block;
     background: #a0cfe1;
@@ -135,21 +123,10 @@
     font-family: Tahoma, serif;
 }
 
-.navItem-content a:hover {
+.navDown-content a:hover {
     background:#236b96;
     color: #fff;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .aside {
     grid-area: aside;
@@ -166,113 +143,136 @@ li {
     margin-left: 1px;
     padding-left: 39px;
     font-size: 12px;
-    margin-top: 4px;
-    
+    margin-top: 4px;   
 }
 
 li:hover{
     background: url(./img/marker2.png) no-repeat left;
 }
 
-
 .asideName {
     background-color: #7472b3;
     color: #fff;
     padding: 4px 20px 5px 22px;
     font-size: 18px;
-    
+    font-family: Arial Narrow, sans-serif;   
 }
-
-.asideItem {
-    color: #000;
-}
-
 
 .content {
-    /* background: pink; */
     grid-area: content;
-    margin-left: 30px;
-    margin-top: 8px;
-    
-
+    margin: 11px 30px;
 }
+
 .way {
-    
-}
-
-.way::after {
-    content: ">";
-
-}
-
-.wayItem{
-    color: #22597a;
+    display: flex;
     font-size: 11px;
-    font-family: "Myriad Pro", sans-serif;
-
 }
 
-
-.wayItem:hover {
-    text-decoration: none;
-
-
+.way div::after {
+    content: '>';
+    margin: 0 5px;
+    color:  #3799d6;
+    font-weight: bold;
 }
 
-
-
-
-
-
-
-#photo {
-    float:left;
-    
+.way div:last-child::after, .smallNav div:last-child::after {
+    content: " ";
 }
 
+.way a {
+    color: #22597a;
+    font-family: Tahoma, serif;
+    margin-right: 2px; 
+}
 
+.profiles {
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 12px;
+    font-family: Verdana, sample, serif;
+    display: flex;
+    flex-direction: column;
+    max-width: 670px;
+    padding-bottom: 13px;
+}
+
+.profileItem{
+    margin-bottom: 12px;
+}
+
+.profileItem img {
+    height: 180px;
+    width: 150px;
+    float: left;
+    padding-right: 25px; 
+
+}
+.name {
+    font-family: Tahoma, serif;
+    font-size: 17px;
+    color: #5664a7;
+    margin: 13px 0;    
+}
+
+br {
+    display: block;
+    content: "";
+    margin-top: 12px;
+}
+
+.smallNav {
+    margin-top: 12px;
+    margin-bottom: 7px;
+    display: flex; 
+}
+
+.smallNav a {
+    color: #1e4f6d;
+    font-size: 11px;
+    font-family: Tahoma, serif;
+    padding: 0 5px;
+}
+
+.smallNav div::after{
+    content: '|';
+    margin: 0 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #1e4f6d;
+
+}
 
 .footer {
     grid-area: footer;
     background-color: #7472b3;
-    
-    /* display: flex;
+    display: flex;
     justify-content: space-between;
-    align-items: center;   */
-
-
 }
 
 .contacts {
-    margin: 20px;
+    margin: 22px 30px;
+    line-height: 14px;
     color:white;
-    font-size: 14px;
-    background: url(./img/logo.png) no-repeat right;
-    background-size: 15%;
-    
-
+    font-size: 11px;
+    font-family: Tahoma, serif;
 }
 
+.logo img {
+    height: 33px;
+    width: 130px;
+    margin: 28px 25px;   
+}
 
-
-/* Светло сиреневый #e7e7f0
-    Сиреневый       #7472b3
-
-    выпадающий список 
-    градиент начало #236b96
-    конец #bbdce9
-
-    color way #22597a
-    about #326697
-    name profile  #6571ad
-
-*/
-
-
-
-
-a, p {
+a {
     font-family: Arial Narrow, sans-serif;
-
+    color: #000;
 }
 
+h4 {
+    font-family: "Myriad Pro", sans-serif;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #1f5e8d;
+    font-weight: normal;
+    font-size: 18px;
+}
